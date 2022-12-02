@@ -1,0 +1,13 @@
+$layout-name: 'l-pagination';
+
+.#{$layout-name} {
+    .page-numbers {
+        margin: 0 .4rem;
+        font-size: 1.25rem;
+        color: $color-folk-bold-electric-blue;
+
+        &.current {
+            font-weight: 700;
+        }
+    }
+}

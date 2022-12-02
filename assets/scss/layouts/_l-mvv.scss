@@ -1,0 +1,59 @@
+$layout-name: 'l-mvv';
+
+.#{$layout-name} {
+    background-color: #F3EFEB;
+
+    &__col-child {
+
+        &:nth-of-type(even) {
+            background-color: $color-folk-bold-electric-blue;
+
+            .#{$layout-name} {
+                &__item-child {
+                    &:nth-of-type(odd) {
+                        order: 2;
+
+                        @media screen and (max-width: 991px) {
+                            order: 1;
+                        }
+
+                        .#{$layout-name} {
+                            &__title {
+                                color: $color-folk-white;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(even) {
+                        order: 1;
+
+                        .#{$layout-name} {
+                            &__description {
+                                text-align: right;
+                                color: $color-folk-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 3.25rem;
+        color: $color-folk-bold-electric-blue;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 3.75rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.125rem;
+        color: $color-folk-bold-electric-blue;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.625rem;
+        }
+    }
+}

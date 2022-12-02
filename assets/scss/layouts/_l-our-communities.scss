@@ -1,0 +1,68 @@
+$layout-name: 'l-our-communities';
+
+.#{$layout-name} {
+    &__box {
+        width: calc(100% + 100px);
+        top: 50%;
+        left: -150px;
+        transform: translateY(-50%);
+        padding: 3rem 5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        position: absolute;
+        z-index: 9;
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            transform: translateY(0);
+            padding: 3rem 1rem;
+            position: unset;
+        }
+
+        &--recovery {
+            width: 100%;
+            left: -84px;
+            padding: 5rem 7rem;
+            z-index: -1;
+
+            @media screen and (max-width: 991px) {
+                padding: 3rem 1rem;
+            }
+        }
+    }
+
+    &__buttons {
+        top: 1rem;
+        right: 1rem;
+        position: absolute;
+
+        &__item {
+            width: 45px;
+            height: 45px;
+            border: 2px solid #FBD485;
+            border-radius: 50%;
+            overflow: hidden;
+            position: unset !important; 
+            cursor: pointer;
+
+            &::after {
+                display: none;
+            }
+            
+            &:hover {
+                background-color: #FBD485;
+
+                img {
+                    filter: sepia(1);
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 2.75rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+$layout-name: 'l-template-community';
+
+.#{$layout-name} {
+    &__box {
+        width: calc(100% + 100px);
+        top: 50%;
+        left: -150px;
+        transform: translateY(-50%);
+        padding: 2rem 3rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        position: absolute;
+        z-index: 9;
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            transform: translateY(0);
+            padding: 3rem 1rem;
+            position: unset;
+        }
+    }
+
+    &__info {
+        bottom: -2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+
+        @media screen and (max-width: 991px) {
+            bottom: -3.5rem;
+        }
+    }
+}

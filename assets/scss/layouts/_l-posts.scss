@@ -1,0 +1,109 @@
+$layout-name: 'l-posts';
+
+.#{$layout-name} {
+    margin-top: 10rem;
+    
+    @media screen and (min-width: 1600px) {
+        margin-top: 17rem;
+    }
+
+    &__thumbnail {
+        height: 280px !important;
+    }
+
+    &__read-more-title {
+        font-size: 2rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 2.625rem !important;
+        }
+    }
+    
+    &__other-post {
+        &__box {
+            background-color: $color-folk-light-gray;
+        }
+
+        &__col-child {
+            &:last-child {
+                * {
+                    &::before {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            &::before {
+                content: '';
+                width: 136px;
+                height: 4px;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                background-color: $color-folk-golden;
+            }
+        }
+    }
+
+    &__item {
+        width: 48%;
+        max-width: 100%;
+        flex: 0 0 48%;
+        transition: all .4s;
+        font-size: .9375rem;
+
+        &:nth-of-type(1) {
+            background-color: #0B2139;
+        }
+
+        &:nth-of-type(2) {
+            background-color: #112D47;
+        }
+
+        &:nth-of-type(3) {
+            background-color: #173B57;
+        }
+
+        &:nth-of-type(4) {
+            background-color: #1F4B67;
+        }
+
+        &:nth-of-type(5) {
+            background-color: #255777;
+        }
+
+        &:nth-of-type(6) {
+            background-color: #255777;
+        }
+
+        &:hover {
+            color: $color-folk-squid-ink;
+            background-color: $color-folk-golden;
+
+            * {
+                &::before {
+                    color: $color-folk-squid-ink;
+                }
+            }
+        }
+    
+        &__icon {
+            position: relative;
+
+            &::before {
+                content: '\2b';
+                top: 50%;
+                right: calc(100% + 8px);
+                transform: translateY(-50%);
+                position: absolute;
+                font-size: 1.375rem;
+                font-weight: 700;
+                font-family: 'Font Awesome 5 Free';
+                color: $color-folk-golden;
+            }
+        }
+    }
+}

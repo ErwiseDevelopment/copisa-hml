@@ -1,0 +1,23 @@
+$layout-name: 'l-our-materials';
+
+.#{$layout-name} {
+    &__card-img {
+        background-color: #F6BB67;
+    }
+
+    &__category {
+        font-size: 1.125rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.375rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.875rem;
+        }
+    }
+}

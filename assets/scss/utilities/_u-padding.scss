@@ -1,0 +1,69 @@
+$utility-name: 'u-p';
+
+.before\:\: {
+    &#{$utility-name} {
+        &l {
+            &-1 {
+                &::before {
+                    padding-left: .25rem !important;
+                }
+            }
+
+            &-2 {
+                &::before {
+                    padding-left: .5rem !important;
+                }
+            }
+
+            &-3 {
+                &::before {
+                    padding-left: 1rem !important;
+                }
+            }
+
+            &-4 {
+                &::before {
+                    padding-left: 1.5rem !important;
+                }
+            }
+
+            &-5 {
+                &::before {
+                    padding-left: 3rem !important;
+                }
+            }
+        }
+
+        &r {
+            &-1 {
+                &::before {
+                    padding-right: .25rem !important;
+                }
+            }
+
+            &-2 {
+                &::before {
+                    padding-right: .5rem !important;
+                }
+            }
+
+            &-3 {
+                &::before {
+                    padding-right: 1rem !important;
+                }
+            }
+
+            &-4 {
+                &::before {
+                    padding-right: 1.5rem !important;
+                }
+            }
+
+            &-5 {
+                &::before {
+                    padding-right: 3rem !important;
+                }
+            }
+        }
+    }
+}

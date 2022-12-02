@@ -1,0 +1,43 @@
+$layout-name: 'l-help';
+
+.#{$layout-name} {
+    background-image: url(../images/help-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__number {
+        font-size: 2.625rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 3.75rem;
+        }
+    }
+
+    &__phares {
+        font-size: 2.625rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 3.75rem;
+        }
+    }
+
+    &__item {
+        &__topic,
+        &__title {
+            line-height: 100%;
+            font-size: 1.375rem;
+
+            @media screen and (min-width: 1600px) {
+                font-size: 1.875rem;
+            }
+
+            @media screen and (max-width: 991px) {
+                font-size: 1rem;
+            }
+        }
+
+        &__topic {
+            width: 72px;
+        }
+    }
+}

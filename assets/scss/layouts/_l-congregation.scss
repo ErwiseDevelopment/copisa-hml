@@ -1,0 +1,87 @@
+$layout-name: 'l-congregation';
+
+.#{$layout-name} {
+    &__description {
+        font-size: 1.125rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: 991px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__item {
+        font-size: 1.125rem;
+        color: $color-folk-white;
+        background-color: $color-folk-medium-electric-blue;
+        cursor: pointer;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.5rem;
+        }
+
+        &::before {
+            content: '';
+            width: calc(100% - 32px);
+            height: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all .4s;
+            position: absolute;
+            background-color: $color-folk-light-gray;
+            z-index: 0;
+        }
+
+        &:hover {
+            &::before {
+                content: '';
+                height: 100%;
+            }
+
+            p {
+                color: $color-folk-bold-electric-blue;
+            }
+        }
+
+        &.is-active {
+            color: $color-folk-bold-electric-blue;
+            background-color: $color-folk-light-gray;
+        }
+
+        p {
+            transition: all 1s;
+            position: relative;
+            z-index: 9;
+        }
+    }
+
+    &__col {
+        display: none;
+
+        &.is-active {
+            display: block !important;
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__content {
+        @media screen and (min-width: 1600px) {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__image {
+        max-height: 250px !important; 
+    }
+}

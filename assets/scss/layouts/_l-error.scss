@@ -1,0 +1,21 @@
+$layout-name: 'l-error';
+
+.#{$layout-name} {
+    &__title {
+        font-size: 3.75rem;
+    }
+
+    &__number {
+        font-size: 5.5rem;
+    }
+
+    &__text {
+        font-size: 2rem;
+    }
+}
+
+.error404 {
+    .l-header {
+        display: none !important;
+    }   
+}

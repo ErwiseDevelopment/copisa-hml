@@ -1,0 +1,119 @@
+$utility-name: 'u-icon';
+
+.#{$utility-name} {
+    &__brands {
+        &::before {
+            font-family: 'Font Awesome 5 Brands';
+        }
+    }
+
+    &__free {
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+        }
+    }
+
+    &__envelope {
+        &::before {
+            content: '\f0e0';
+        }
+
+        &\:\:right {
+            &::before {
+                content: '\f0e0';
+                right: 100%;
+                position: absolute;
+            }
+        }
+    }
+
+    &__facebook {
+        &::before {
+            content: '\f39e';
+        }
+    }
+
+    &__facebook-square {
+        &::before {
+            content: '\f082';
+        }
+    }
+
+    &__instagram {
+        &::before {
+            content: '\f16d';
+        }
+    }
+
+    &__map {
+        &::before {
+            content: '\f3c5';
+        }
+
+        &\:\:right {
+            &::before {
+                content: '\f3c5';
+                right: 100%;
+                position: absolute;
+            }
+        }
+    }
+
+    &__phone-alt {
+        &::before {
+            content: '\f879';
+        }
+
+        &\:\:right {
+            &::before {
+                content: '\f879';
+                right: 100%;
+                position: absolute;
+            }
+        }
+    }
+
+    &__pinterest {
+        &::before {
+            content: '\f231';
+        }
+    }
+
+    &__search {
+        &::before {
+            content: '\f002';
+        }
+    }
+
+    &__spotify {
+        &::before {
+            content: '\f1bc';
+        }
+    }
+
+    &__twitter {
+        &::before {
+            content: '\f099';
+        }
+    }
+
+    &__youtube {
+        &::before {
+            content: '\f167';
+        }
+    }
+
+   
+    &__plus {
+        &::before {
+            content: '\f055';
+        }
+    }
+
+
+    &__whatsapp {
+        &::before {
+            content: '\f232';
+        }
+    }
+}

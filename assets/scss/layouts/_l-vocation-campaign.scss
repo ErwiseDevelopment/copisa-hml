@@ -1,0 +1,30 @@
+$layout-name: 'l-vocation-campaign';
+
+.#{$layout-name} {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &__description {
+        font-size: 1.125rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.375rem;
+        }
+    }
+
+    &__iframe {
+        iframe {
+            width: 100%;
+            height: 380px;
+        }
+    }
+
+    &__link {
+        font-size: 1.375rem;
+
+        @media screen and (min-width: 1600px) {
+            font-size: 1.8125rem;
+        }
+    }
+}
