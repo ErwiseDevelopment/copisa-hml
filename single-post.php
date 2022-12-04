@@ -229,9 +229,9 @@ get_header(); ?>
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => $categories[0]->slug,
-												'order'          => 'DESC'
-											);
+												'category_name'  => $categories[0]->slug + 'noticias',
+												'order'          => 'DESC',
+												);
 
 											$other_news_posts = new WP_Query( $args );
 
