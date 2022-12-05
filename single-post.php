@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<!-- banner -->
+<!-- banner -->a
 <?php
 	$categories_post = array();
 
@@ -31,6 +31,9 @@ get_header(); ?>
 				array_push( $categories_post, $category->name );
 		}
 	}
+	 $posts_current = array();
+ 		array_push($posts_current, get_the_ID()); 
+	
 ?>
 <section class="u-bg-folk-extrabold-electric-blue py-5">
 
@@ -94,56 +97,7 @@ get_header(); ?>
 
 						<div class="row">
 
-							<div class="col-6 d-flex align-items-center">
-								<p class="u-font-size-17 xxl:u-font-size-20 u-font-weight-bold mb-0">
-									Tags: <span class="u-font-size-14 u-font-weight-semibold u-color-folk-golden">Evangelização</span>
-								</p>
-							</div>
-
-							<div class="col-6">
-
-								<!-- <ul class="d-flex justify-content-end mb-0 pl-0">
-									<li class="u-list-style-none mx-2">
-										<a
-										class="u-icon__brands u-icon__facebook px:u-w-44 px:u-h-44 border rounded-pill d-flex justify-content-center align-items-center u-font-size-0 before::u-font-size-16 u-font-weight-light text-decoration-none u-color-folk-aluminium hover:u-color-folk-white hover:u-bg-folk-medium-electric-blue"
-										href="#"
-										target="_blank"
-										rel="noreferrer noopener">
-											Link do Facebook
-										</a>
-									</li>
-
-									<li class="u-list-style-none mx-2">
-										<a
-										class="u-icon__brands u-icon__twitter px:u-w-44 px:u-h-44 border rounded-pill d-flex justify-content-center align-items-center u-font-size-0 before::u-font-size-16 u-font-weight-light text-decoration-none u-color-folk-aluminium hover:u-color-folk-white hover:u-bg-folk-medium-electric-blue"
-										href="#"
-										target="_blank"
-										rel="noreferrer noopener">
-											Link do Twitter
-										</a>
-									</li>
-
-									<li class="u-list-style-none mx-2">
-										<a
-										class="u-icon__brands u-icon__instagram px:u-w-44 px:u-h-44 border rounded-pill d-flex justify-content-center align-items-center u-font-size-0 before::u-font-size-16 u-font-weight-light text-decoration-none u-color-folk-aluminium hover:u-color-folk-white hover:u-bg-folk-medium-electric-blue"
-										href="#"
-										target="_blank"
-										rel="noreferrer noopener">
-											Link do Instagram
-										</a>
-									</li>
-
-									<li class="u-list-style-none ml-2">
-										<a
-										class="u-icon__brands u-icon__pinterest px:u-w-44 px:u-h-44 border rounded-pill d-flex justify-content-center align-items-center u-font-size-0 before::u-font-size-16 u-font-weight-light text-decoration-none u-color-folk-aluminium hover:u-color-folk-white hover:u-bg-folk-medium-electric-blue"
-										href="#"
-										target="_blank"
-										rel="noreferrer noopener">
-											Link do Pinterest
-										</a>
-									</li>
-								</ul> -->
-							</div>
+							
 						</div>
 					</div>
 
@@ -221,29 +175,24 @@ get_header(); ?>
 										<!-- loop -->
 										<?php
 											$categories = array();
-											$news = 'noticias';
-											$blogs = 'blog';
-
-
 
 											foreach( get_the_category( get_the_ID() ) as $cat ) {
-												$c =  get_category($cat);
-												array_push($categories, $c->name);	
-												
+												array_push($categories, $cat->slug);	
 											}
-											
+
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => $news, $blogs,
-												//'order'          => 'DESC',
-												);
+												'category_name'  => 'noticias', 'blog',
+												'order'          => 'DESC',
+												'post__not_in' =>  $posts_current,
+												
+											);
 
 											$other_news_posts = new WP_Query( $args );
 
 											if( $other_news_posts->have_posts() ) :
 												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-												if ($categories[0]->name <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
@@ -277,16 +226,14 @@ get_header(); ?>
 
 																<h4 class="u-font-size-13 u-font-weight-bold u-color-folk-dark-grayish-navy">
 																	<!-- Título da Notícia -->
-																	<?php the_title(); ?>
+																	<?php the_title() ?>
 																</h4>
 															</div>
 														</div>
 													</a>
- 										<?php } endif;
-								
+										<?php
 												endwhile;
-											endif; 
-										
+											endif;
 											
 											wp_reset_query();
 										?>
