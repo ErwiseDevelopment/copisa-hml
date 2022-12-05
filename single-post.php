@@ -223,8 +223,8 @@ get_header(); ?>
 											$categories = array();
 
 											foreach( get_the_category( get_the_ID() ) as $cat ) {
-												$c =  get_category($cat);
-												array_push($categories, $c->name);	
+												// $c =  get_category($cat);
+												array_push($categories, $cat->slug);	
 												
 											}
 											
@@ -239,7 +239,7 @@ get_header(); ?>
 
 											if( $other_news_posts->have_posts() ) :
 												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-												if ($categories()->name <> 'aplicativo') : {
+												if ($categories()->slug <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
