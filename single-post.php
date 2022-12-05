@@ -294,7 +294,7 @@ get_header(); ?>
 
 																<h4 class="u-font-size-13 u-font-weight-bold u-color-folk-dark-grayish-navy">
 																	<!-- Título da Notícia -->
-																	<?php the_title(); var_dump($cats[1]->name )?>
+																	<?php the_title(); var_dump($cats[0]->name )?>
 																</h4>
 															</div>
 														</div>
