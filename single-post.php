@@ -231,7 +231,7 @@ get_header(); ?>
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => 'noticias' || 'blog',
+												'category_name'  => 'noticias',
 												//'order'          => 'DESC',
 												);
 
