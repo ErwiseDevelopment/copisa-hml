@@ -260,7 +260,7 @@ get_header(); ?>
 	
 													if( $contents->have_posts()):
 														while ($contents->have_posts()) : $contents->the_post();
-												if ($cats[1]->name<> 'aplicativo') : {
+												if ($cats[1]->name <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
@@ -294,7 +294,7 @@ get_header(); ?>
 
 																<h4 class="u-font-size-13 u-font-weight-bold u-color-folk-dark-grayish-navy">
 																	<!-- Título da Notícia -->
-																	<?php the_title(); var_dump($cat->slug)?>
+																	<?php the_title(); var_dump($cats[1]->name )?>
 																</h4>
 															</div>
 														</div>
