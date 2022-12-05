@@ -102,7 +102,7 @@ get_header(); ?>
 
 							<div class="col-6">
 
-								<ul class="d-flex justify-content-end mb-0 pl-0">
+								<!-- <ul class="d-flex justify-content-end mb-0 pl-0">
 									<li class="u-list-style-none mx-2">
 										<a
 										class="u-icon__brands u-icon__facebook px:u-w-44 px:u-h-44 border rounded-pill d-flex justify-content-center align-items-center u-font-size-0 before::u-font-size-16 u-font-weight-light text-decoration-none u-color-folk-aluminium hover:u-color-folk-white hover:u-bg-folk-medium-electric-blue"
@@ -142,7 +142,7 @@ get_header(); ?>
 											Link do Pinterest
 										</a>
 									</li>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 					</div>
@@ -220,25 +220,47 @@ get_header(); ?>
 											
 										<!-- loop -->
 										<?php
-											$categories = array();
+											// $categories = array();
 
-											foreach( get_the_category( get_the_ID() ) as $cat ) {
-												array_push($categories, $cat->slug);	
+											// foreach( get_the_category( get_the_ID() ) as $cat ) {
+											// 	array_push($categories, $cat->slug);	
 												
-											}
+											// }
 											
-											$args = array(
-												'posts_per_page' => 3,
-												'post_type'      => 'post',
-												'category_name'  => $categories[0]->slug ,
-												//'order'          => 'DESC',
-												);
+											// $args = array(
+											// 	'posts_per_page' => 3,
+											// 	'post_type'      => 'post',
+											// 	'category_name'  => $categories[0]->slug ,
+											// 	//'order'          => 'DESC',
+											// 	);
 
-											$other_news_posts = new WP_Query( $args );
+											// $other_news_posts = new WP_Query( $args );
 
-											if( $other_news_posts->have_posts() ) :
-												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-												if ($categories[0]->slug <> 'aplicativo') : {
+											// if( $other_news_posts->have_posts() ) :
+											// 	while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
+											$cats = array();
+												
+
+												foreach (get_the_category( get_the_ID() ) as $c) {
+													$cat = get_category($c);
+													array_push($cats, $cat);
+												}
+
+												foreach( $cats as $cat ) :
+													$args = array(
+														'posts_per_page' => 5,
+														'post_type'      => 'post',
+														'category_name'  => $cats[1]->name,
+														'order'          => 'DESC',
+														'post__not_in' =>  $posts_current,
+													
+													);
+	
+													$contents = new WP_Query( $args );
+	
+													if( $contents->have_posts()):
+														while ($contents->have_posts()) : $contents->the_post();
+												if ($cats[1]->name<> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
@@ -272,19 +294,18 @@ get_header(); ?>
 
 																<h4 class="u-font-size-13 u-font-weight-bold u-color-folk-dark-grayish-navy">
 																	<!-- Título da Notícia -->
-																	<?php the_title(); var_dump($cat)?>
+																	<?php the_title(); var_dump($cat->slug)?>
 																</h4>
 															</div>
 														</div>
 													</a>
  										<?php } endif;
 								
-												endwhile;
-											endif; 
-										
-											
-											wp_reset_query();
-										?>
+							endwhile;
+						endif;
+					endforeach; 
+						wp_reset_query(); 
+					?>
 										<!-- end loop -->
 									</div>
 								</div>
