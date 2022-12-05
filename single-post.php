@@ -224,12 +224,13 @@ get_header(); ?>
 
 											foreach( get_the_category( get_the_ID() ) as $cat ) {
 												array_push($categories, $cat->slug);	
+												
 											}
-
+											if ($categories <> 'aplicativo') : {
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => $categories[0]->slug + 'noticias',
+												'category_name'  => $categories[0]->slug ,
 												'order'          => 'DESC',
 												);
 
@@ -275,9 +276,11 @@ get_header(); ?>
 															</div>
 														</div>
 													</a>
-										<?php
+ 										<?php 
+								
 												endwhile;
-											endif;
+											endif; 
+										} endif;
 											
 											wp_reset_query();
 										?>
