@@ -250,9 +250,9 @@ get_header(); ?>
 													$args = array(
 														'posts_per_page' => 5,
 														'post_type'      => 'post',
-														'category_name'  => $cats[1]->name,
+														'category_name'  => 'noticia',
 														'order'          => 'DESC',
-														'post__not_in' =>  $posts_current,
+														
 													
 													);
 	
