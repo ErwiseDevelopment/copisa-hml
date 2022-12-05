@@ -226,7 +226,7 @@ get_header(); ?>
 												array_push($categories, $cat->slug);	
 												
 											}
-											if ($categories <> 'aplicativo') : {
+											
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
@@ -238,6 +238,7 @@ get_header(); ?>
 
 											if( $other_news_posts->have_posts() ) :
 												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
+												if ($categories <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
@@ -276,11 +277,11 @@ get_header(); ?>
 															</div>
 														</div>
 													</a>
- 										<?php 
+ 										<?php } endif;
 								
 												endwhile;
 											endif; 
-										} endif;
+										
 											
 											wp_reset_query();
 										?>
