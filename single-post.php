@@ -220,47 +220,26 @@ get_header(); ?>
 											
 										<!-- loop -->
 										<?php
-											// $categories = array();
+											$categories = array();
 
-											// foreach( get_the_category( get_the_ID() ) as $cat ) {
-											// 	array_push($categories, $cat->slug);	
+											foreach( get_the_category( get_the_ID() ) as $cat ) {
+												$c =  get_category($cat);
+												array_push($categories, $c->name);	
 												
-											// }
+											}
 											
-											// $args = array(
-											// 	'posts_per_page' => 3,
-											// 	'post_type'      => 'post',
-											// 	'category_name'  => $categories[0]->slug ,
-											// 	//'order'          => 'DESC',
-											// 	);
+											$args = array(
+												'posts_per_page' => 3,
+												'post_type'      => 'post',
+												'category_name'  => $categories[0]->name ,
+												//'order'          => 'DESC',
+												);
 
-											// $other_news_posts = new WP_Query( $args );
+											$other_news_posts = new WP_Query( $args );
 
-											// if( $other_news_posts->have_posts() ) :
-											// 	while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-											$cats = array();
-												
-
-												foreach (get_the_category( get_the_ID() ) as $c) {
-													$cat = get_category($c);
-													array_push($cats, $cat);
-												}
-
-												foreach( $cats as $cat ) :
-													$args = array(
-														'posts_per_page' => 5,
-														'post_type'      => 'post',
-														'category_name'  => 'noticias',
-														'order'          => 'DESC',
-														
-													
-													);
-	
-													$contents = new WP_Query( $args );
-	
-													if( $contents->have_posts()):
-														while ($contents->have_posts()) : $contents->the_post();
-												if ($cats[1]->name <> 'aplicativo') : {
+											if( $other_news_posts->have_posts() ) :
+												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
+												if ($categories[0]->name <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
@@ -294,18 +273,19 @@ get_header(); ?>
 
 																<h4 class="u-font-size-13 u-font-weight-bold u-color-folk-dark-grayish-navy">
 																	<!-- Título da Notícia -->
-																	<?php the_title(); var_dump($cats[0]->name )?>
+																	<?php the_title(); ?>
 																</h4>
 															</div>
 														</div>
 													</a>
  										<?php } endif;
 								
-							endwhile;
-						endif;
-					endforeach; 
-						wp_reset_query(); 
-					?>
+												endwhile;
+											endif; 
+										
+											
+											wp_reset_query();
+										?>
 										<!-- end loop -->
 									</div>
 								</div>
