@@ -221,6 +221,10 @@ get_header(); ?>
 										<!-- loop -->
 										<?php
 											$categories = array();
+											$news = 'noticias';
+											$blogs = 'blog';
+
+
 
 											foreach( get_the_category( get_the_ID() ) as $cat ) {
 												$c =  get_category($cat);
@@ -231,7 +235,7 @@ get_header(); ?>
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => 'noticias' || 'blog',
+												'category_name'  => $news, $blogs,
 												//'order'          => 'DESC',
 												);
 
