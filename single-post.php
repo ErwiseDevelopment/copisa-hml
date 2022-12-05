@@ -238,7 +238,7 @@ get_header(); ?>
 
 											if( $other_news_posts->have_posts() ) :
 												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-												if ($categories <> 'aplicativo') : {
+												if ($cat->slug <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
