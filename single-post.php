@@ -231,7 +231,7 @@ get_header(); ?>
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => $categories[0]->name ,
+												'category_name'  => $c[0]->name ,
 												//'order'          => 'DESC',
 												);
 
@@ -239,7 +239,7 @@ get_header(); ?>
 
 											if( $other_news_posts->have_posts() ) :
 												while( $other_news_posts->have_posts() ) : $other_news_posts->the_post();
-												if ($categories[0]->name <> 'aplicativo') : {
+												if ($categories()->name <> 'aplicativo') : {
 										?>
 													<a 
 													class="col-12 u-border-b-1 last-child:u-border-b-1 border-light d-block text-decoration-none my-3 pb-3"
