@@ -183,7 +183,7 @@ get_header(); ?>
 											$args = array(
 												'posts_per_page' => 3,
 												'post_type'      => 'post',
-												'category_name'  => 'noticias',
+												'category_name'  => $categories_pattern,
 												'order'          => 'DESC',
 												'post__not_in' =>  $posts_current,
 												

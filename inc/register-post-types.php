@@ -60,7 +60,7 @@ if (get_field('modulo_ebook', 'option')== '1'):
 		'labels' 		=> array( 'name' => 'Podcast', 'singular_name' => 'Podcast', 'all_items' => 'Podcast' ),
 		'public' 		=> true,
 		'has_archive'	=> true,
-		'menu_icon'		=> 'dashicons-format-quote',
+		'menu_icon'		=> 'dashicons-format-video',
 		'supports' 		=> array( 'title' ) 
 	) );
 }

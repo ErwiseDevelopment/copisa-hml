@@ -73,7 +73,7 @@ get_header();
                                             array(
                                                 'taxonomy' => 'cat',
                                                 'field'    => 'slug',
-                                                'terms'    => 'videos',
+                                                'terms'    => 'suporte',
                                             )
                                             ));
                                         
